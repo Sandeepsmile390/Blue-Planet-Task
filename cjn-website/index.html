@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CJN Careers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header with logo and menu -->
+  <div class="top-header">
+    <div class="logo-menu">
+      <div class="menu" tabindex="0">
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="menu-options">
+          <li><a href="#video">Videos</a></li>
+          <li><a href="#comments">Comments</a></li>
+          <li><a href="#hiring">Hiring</a></li>
+          <li><a href="#internship">Internship</a></li>
+        </ul>
+      </div>
+      <!-- Use a relative path for the logo image -->
+      <img class="logo-img" src="logo.jpg" alt="CJN Logo">
+    </div>
+    <div class="stats">
+      <div>Opening<br><strong>25</strong></div>
+      <div>Interviews<br><strong>223</strong></div>
+      <div>Offered<br><strong>10</strong></div>
+    </div>
+  </div>
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Comments -->
+    <div class="left-comments" id="comments">
+      <div class="comments-track">
+        <!-- Removed unnecessary ~ from names -->
+        <div class="comment"><img width="20" height="20" src="https://img.icons8.com/fluency/48/person-male.png" alt="person-male" /><strong>Priyanka Ashok Karan~</strong> (candidate)<br>Good platform</div>
+        <div class="comment"><img width="20" height="20" src="https://img.icons8.com/fluency/48/person-male.png" alt="person-male" /><strong>ABHISHEK B YADAV~</strong> (candidate)<br>Nice video</div>
+        <div class="comment"><img width="20" height="20" src="https://img.icons8.com/fluency/48/person-male.png" alt="person-male" /><strong>Vinayak B~</strong> (candidate)<br>Excellent Excel</div>
+        <div class="comment"><img width="20" height="20" src="https://img.icons8.com/fluency/48/person-male.png" alt="person-male" /><strong>Tanmay Kailas Hirodkar~</strong> (candidate)<br>moye</div>
+        <div class="comment"><img width="20" height="20" src="https://img.icons8.com/fluency/48/person-male.png" alt="person-male" /><strong>Priyanka Ashok Karan~</strong> (candidate)<br>Good platform</div>
+      </div>
+    </div>
+    <!-- Video -->
+    <div class="middle-video" id="video">
+      <h2 style="margin-bottom: 18px; color:#3b4a6b;">Meet & Greet with AICTE Candidates</h2>
+      <iframe width="100%" height="240" src="https://www.youtube.com/embed/7NE65gsla1Y" title="M&G with AICTE Candidates" frameborder="0" allowfullscreen></iframe>
+      <div class="video-desc" style="margin-top: 14px; color: #3b4a6b; font-size: 15px; text-align: center;">
+        Watch our latest session with AICTE candidates where we discuss opportunities, career growth, and the future of technology at CJN. Don’t miss the insights and experiences shared by our team and participants!
+      </div>
+    </div>
+    <!-- Hiring Section -->
+    <div class="right-hiring" id="hiring">
+      <div class="hiring-carousel">
+        <button class="hiring-arrow left" onclick="slideHiring(-1)">&#8592;</button>
+        <div class="hiring-track" id="hiringTrack">
+          <img class="hiring-img" src="h1.jpg" alt="Hiring Image 1">
+          <img class="hiring-img" src="h2.jpg" alt="Hiring Image 2">
+          <img class="hiring-img" src="h3.jpg" alt="Hiring Image 3">
+          <img class="hiring-img" src="h4.jpg" alt="Hiring Image 4">
+          <img class="hiring-img" src="h5.png" alt="Hiring Image 5">
+        </div>
+        <button class="hiring-arrow right" onclick="slideHiring(1)">&#8594;</button>
+      </div>
+      <div class="hiring-desc">
+        <strong>We're hiring!</strong><br>
+        Join our dynamic team and work on exciting projects.<br>
+        <span style="color:#23305a;font-weight:600;">Apply now for a chance to grow your career with CJN.</span>
+      </div>
+    </div>
+  </div>
+  <!-- QR Codes Section -->
+  <div class="qr-section" id="internship">
+    <div class="qr-carousel">
+      <div class="qr-track">
+        <div class="qr-block">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=REACT.JS&size=80x80" alt="React">
+          <div class="qr-label">React.js</div>
+        </div>
+        <div class="qr-block">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=NODE.JS&size=80x80" alt="Node">
+          <div class="qr-label">Node.js</div>
+        </div>
+        <div class="qr-block">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=Data+Analytics&size=80x80" alt="Data Analytics">
+          <div class="qr-label">Data Analytics</div>
+        </div>
+        <div class="qr-block">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=IOS+APP&size=80x80" alt="iOS App">
+          <div class="qr-label">iOS App</div>
+        </div>
+        <div class="qr-block">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=MARKETING&size=80x80" alt="Marketing">
+          <div class="qr-label">Marketing</div>
+        </div>
+        <div class="qr-block">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=PYTHON&size=80x80" alt="Python">
+          <div class="qr-label">Python</div>
+        </div>
+        <div class="qr-block">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=JAVA&size=80x80" alt="Java">
+          <div class="qr-label">Java</div>
+        </div>
+        <div class="qr-block">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=UI%2FUX&size=80x80" alt="UI/UX">
+          <div class="qr-label">UI/UX</div>
+        </div>
+        <div class="qr-block">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=BLOCKCHAIN&size=80x80" alt="Blockchain">
+          <div class="qr-label">Blockchain</div>
+        </div>
+        <div class="qr-block">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=CYBERSECURITY&size=80x80" alt="Cybersecurity">
+          <div class="qr-label">Cybersecurity</div>
+        </div>
+        <div class="qr-block">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=DEVOPS&size=80x80" alt="DevOps">
+          <div class="qr-label">DevOps</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+    <p>Show ID: CJN102 &nbsp;|&nbsp; Show End Time: 13291000</p>
+    <p>&copy; 2025 CJN Careers. All rights reserved.</p>
+  </div>
+
+  <!-- HELPDESK CHAT Floating Button -->
+  <a href="mailto:support@cjn.com" class="customer-support-btn" title="Helpdesk Chat">
+    <img src="chat.jpg" alt="Helpdesk Chat" />
+    <span class="helpdesk-label">HELPDESK CHAT</span>
+  </a>
+  <!-- Interviews Floating Button -->
+  <a href="#interviews" class="interview-float-btn" title="Interviews">
+    <img src="interview_room.png" alt="Interview" />
+  </a>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let currentHiring = 0;
+    const hiringImages = document.querySelectorAll('.hiring-img');
+    function showHiringImage(idx) {
+      hiringImages.forEach((img, i) => {
+        img.style.display = i === idx ? 'block' : 'none';
+      });
+    }
+    function slideHiring(dir) {
+      currentHiring += dir;
+      if (currentHiring < 0) currentHiring = hiringImages.length - 1;
+      if (currentHiring >= hiringImages.length) currentHiring = 0;
+      showHiringImage(currentHiring);
+    }
+    window.slideHiring = slideHiring;
+    showHiringImage(currentHiring);
+  });
+  </script>
+</body>
+</html>

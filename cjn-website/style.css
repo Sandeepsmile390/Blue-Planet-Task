@@ -1,0 +1,419 @@
+body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f9fb;
+      color: #222;
+    }
+    /* Header */
+    .top-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1a2233; /* Dark suited color */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      padding: 0 32px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: navbarFadeIn 0.8s ease;
+    }
+    @keyframes navbarFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .logo-menu {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .logo-img {
+      height: 44px;
+      width: 120px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: transparent; /* Make background transparent */
+      border: 2px solid #3b4a6b;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      padding: 4px;
+    }
+    /* Hamburger menu */
+    .menu {
+      position: relative;
+      margin-left: 10px;
+    }
+    .menu-icon {
+      width: 32px;
+      height: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .menu-icon span {
+      display: block;
+      height: 4px;
+      background: #fff; /* White lines for contrast */
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .menu-options {
+      display: none;
+      position: absolute;
+      left: 0;              /* Align dropdown to the left edge of the menu icon */
+      right: auto;          /* Prevent right alignment */
+      top: 38px;
+      background: #232b3e; /* Dark dropdown */
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      list-style: none;
+      padding: 10px 0;
+      margin: 0;
+      min-width: 160px;
+      max-width: 90vw;      /* Prevent dropdown from overflowing screen */
+      border-radius: 8px;
+      z-index: 100;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.3s, transform 0.3s;
+      word-break: break-word;
+    }
+    .menu:hover .menu-options,
+    .menu:focus-within .menu-options {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .menu-options li {
+      padding: 10px 28px;
+      transition: background 0.2s;
+    }
+    .menu-options li:hover {
+      background: #f0f4fa;
+    }
+    .menu-options li:hover a {
+      color: #23305a; /* Make font visible and clear on hover */
+    }
+    .menu-options a {
+      color: #fff; /* White text for dropdown */
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+    }
+    /* Stats */
+    .stats {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      /* Center vertically with nav bar */
+    }
+    .stats div {
+      background: #23304a;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      min-width: 60px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      line-height: 1.2;
+      transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .stats div:hover {
+      background: #b0c4f8;
+      color: #23304a;
+      transform: translateY(-3px) scale(1.06);
+      box-shadow: 0 4px 16px rgba(59,74,107,0.13);
+      cursor: pointer;
+    }
+    /* Main Content */
+    .main-content {
+      display: flex;
+      gap: 32px;
+      margin: 12px auto 0 auto;
+      max-width: 1200px;
+      padding: 0 24px;
+    }
+    /* Comments - horizontal animation */
+    .left-comments {
+      flex: 1.2;
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: relative;
+      min-width: 220px;
+      max-width: 260px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 18px 12px;
+      margin-top: 16px;
+      max-height: 340px; /* Add this line to enable vertical scrolling */
+    }
+    .left-comments::-webkit-scrollbar {
+      width: 8px;
+      background: #f7f9fb;
+      border-radius: 8px;
+    }
+    .left-comments::-webkit-scrollbar-thumb {
+      background: #b0c4f8;
+      border-radius: 8px;
+    }
+    .comments-track {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      animation: scrollComments 8s linear infinite;
+    }
+    .left-comments:hover .comments-track,
+    .left-comments:focus-within .comments-track {
+      animation-play-state: paused; /* Pause animation on hover/focus for manual scroll */
+    }
+    @keyframes scrollComments {
+      0% { transform: translateY(0); }
+      90% { transform: translateY(-60%); }
+      100% { transform: translateY(0); }
+    }
+    .comment {
+      background: #eaf1fb;
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-size: 15px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+      min-width: 180px;
+      border: 1px solid #b0c4f8; /* Add a small border to every comment */
+    }
+    /* Video */
+    .middle-video {
+      flex: 2.2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 24px 0;
+      min-width: 340px;
+    }
+    .middle-video iframe {
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    /* Hiring section */
+    .right-hiring {
+      flex: 1.3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 18px 12px 18px 12px;
+      min-width: 240px;
+      max-width: 700px; /* Increase max-width to fit the carousel */
+      margin-top: 9px;
+      width: 100%; /* Allow it to grow as needed */
+      box-sizing: border-box;
+    }
+    /* Hiring carousel styles */
+    .hiring-carousel {
+      width: 100%;
+      max-width: 660px; /* Ensures carousel fits nicely in layout */
+      overflow: hidden;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+      position: relative;
+      background: #f4f7fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hiring-track {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hiring-img {
+      width: 100%;
+      max-width: 660px;   /* Ensures image never exceeds design width */
+      height: 440px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #eaf1fb;
+      flex-shrink: 0;
+      display: none;
+    }
+
+    /* QR codes */
+    .qr-section {
+      width: 100%;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 18px 0;
+      margin: 36px auto 0 auto;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .qr-carousel {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .qr-track {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: max-content;
+      animation: qrScroll 18s linear infinite;
+    }
+    @keyframes qrScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .qr-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      min-width: 110px;
+      margin: 0 12px;
+    }
+    .qr-block img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      border: 2.5px solid #3b4a6b; /* Added a bold, elegant border */
+      background: #f7f9fb;
+      box-shadow: 0 2px 8px rgba(59,74,107,0.10); /* Optional: subtle shadow for emphasis */
+    }
+    .qr-label {
+      font-size: 13px;
+      color: #3b4a6b;
+      margin-top: 2px;
+      text-align: center;
+    }
+    @keyframes qrScrollHorizontal {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    /* Footer */
+    .footer {
+      padding: 18px 0 10px 0;
+      font-size: 13px;
+      color: #fff;
+      text-align: center;
+      background: #1a2233; /* Match navbar color */
+      margin-top: 40px;
+      border-radius: 0 0 12px 12px;
+    }
+    /* Customer Support Button */
+    .customer-support-btn {
+      position: fixed;
+      right: 28px;
+      bottom: 28px;
+      z-index: 999;
+      background: #fff;
+      border-radius: 30px;
+      box-shadow: 0 4px 24px rgba(59,74,107,0.18), 0 1.5px 8px rgba(30,40,80,0.10); /* Enhanced shadow */
+      padding: 8px 18px 8px 10px;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .customer-support-btn:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      transform: scale(1.08);
+      background: #eaf1fb;
+    }
+    .customer-support-btn img {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
+    .helpdesk-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #23305a;
+      letter-spacing: 1px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    /* Interview Float Button */
+    .interview-float-btn {
+      position: fixed;
+      right: 32px;
+      bottom: 90px; /* Place above helpdesk */
+      z-index: 1000;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 4px 18px rgba(59,74,107,0.15), 0 1.5px 8px rgba(30,40,80,0.10);
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .interview-float-btn:hover {
+      box-shadow: 0 6px 24px rgba(59,74,107,0.22);
+      transform: scale(1.08);
+      background: #eaf1fb;
+    }
+    .interview-float-btn img {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
+    .top-header:hover {
+      box-shadow: 0 6px 24px rgba(59,74,107,0.18), 0 1.5px 8px rgba(30,40,80,0.10);
+      transition: box-shadow 0.3s;
+    }
+    @media (max-width: 900px) {
+      .main-content, .qr-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+      .main-content {
+        padding: 0 8px;
+      }
+      .qr-section {
+        gap: 18px;
+        padding: 12px 0;
+      }
+    }
+    @media (max-width: 1100px) {
+      .hiring-carousel,
+      .hiring-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+      .right-hiring {
+        max-width: 100%;
+        padding: 12px 0;
+      }
+    }
+
