@@ -1,4 +1,4 @@
-// This file contains JavaScript code to handle the slideshow functionality and any other interactive features of the website.
+// This file contains JavaScript code 
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -26,3 +26,9 @@ function showSlides(n) {
 document.addEventListener("DOMContentLoaded", () => {
   showSlides(slideIndex);
 });
+
+
+setInterval(() => {
+  slideIndex++;
+  showSlides(slideIndex);
+}, 3000); 
